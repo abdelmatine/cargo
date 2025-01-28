@@ -1,8 +1,11 @@
 import React from 'react'
 import Category from './components/Category'
+import Footer from './components/Footer'
 
 import Header from './components/Header'
 import Hero from './components/Hero'
+import InfoSection from './components/InfoSection'
+import MostSearched from './components/MostSearched'
 
 
 function Home() {
@@ -11,6 +14,9 @@ function Home() {
       <Header/>
       <Hero/>
       <Category/>
+      <MostSearched />
+      <InfoSection/>
+      <Footer/>
     </div>
   )
 }

@@ -21,7 +21,7 @@ function Search() {
         <label className="text-sm font-medium text-gray-700 md:hidden">Cars</label>
         <Select>
           <SelectTrigger className="outline-none border border-gray-300 md:border-none rounded-md md:rounded-full w-full shadow-sm md:shadow-none focus:ring-2 md:focus:ring-0 focus:ring-primary focus:border-primary">
-            <SelectValue placeholder="Select Cars" />
+            <SelectValue placeholder="Select Car" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="light">New</SelectItem>
@@ -38,7 +38,7 @@ function Search() {
         <label className="text-sm font-medium text-gray-700 md:hidden">Brands</label>
         <Select>
           <SelectTrigger className="outline-none border border-gray-300 md:border-none rounded-md md:rounded-full w-full shadow-sm md:shadow-none focus:ring-2 md:focus:ring-0 focus:ring-primary focus:border-primary">
-            <SelectValue placeholder="Select Brands" />
+            <SelectValue placeholder="Select Brand" />
           </SelectTrigger>
           <SelectContent>
             {Data.Brands.map((brand) => (
@@ -58,7 +58,7 @@ function Search() {
         <label className="text-sm font-medium text-gray-700 md:hidden">Pricing</label>
         <Select>
           <SelectTrigger className="outline-none border border-gray-300 md:border-none rounded-md md:rounded-full w-full shadow-sm md:shadow-none focus:ring-2 md:focus:ring-0 focus:ring-primary focus:border-primary">
-            <SelectValue placeholder="Select Pricing" />
+            <SelectValue placeholder="Select Price" />
           </SelectTrigger>
           <SelectContent>
             {Data.Pricing.map((price) => (
