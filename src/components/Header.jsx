@@ -11,7 +11,7 @@ function Header() {
   return (
     <div className='flex justify-between items-center shadow-sm p-5'>
       <img
-      src='/vehicool_logo.svg'
+      src='/veg.svg'
       width={200}
       height={100}
       />
