@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button } from './ui/button';
-import {useUser, UserButton} from '@clerk/clerk-react'
+import {useUser, UserButton, SignInButton} from '@clerk/clerk-react'
 import Logo from './ui/logo'
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -25,10 +26,14 @@ function Header() {
       {isSignedIn?
       <div className='flex items-center gap-5'>
         <UserButton/>
-        <Button>Submit Listing</Button>
+        <Link to={'/profile'}>
+          <Button>Submit Listing</Button>
+        </Link>
       </div>
       :
-      <Button>Submit Listing</Button>
+      <SignInButton mode='modal' forceRedirectUrl='/'>
+        <Button>Submit Listing</Button>
+      </SignInButton>
       }
 
     </div>
