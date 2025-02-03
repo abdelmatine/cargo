@@ -21,7 +21,7 @@ function AddListing() {
     <div>
         <Header/>
         <div className='px-10 md:px-20 my-10'>
-            <h2 className='font-bold text-4xl'>Add New Listing</h2>
+            <h2 className='font-bold text-4xl'>Add New Car Listing</h2>
             <form className='p-10 border rounded-xl mt-10'>
                 {/* Car Details */}
                 <div>
@@ -46,10 +46,18 @@ function AddListing() {
                     <h2 className='font-medium text-xl my-6'>Features</h2>
                     <div className='grid grid-cols-2 md:grid-cols-3 gap-2'>
                         {features.features.map((item, index)=>(
+
                             <div key={index} className='flex gap-2 items-center'>
-                                <Checkbox /> <h2 className='text-sm font-semibold'>{item.label}</h2>
+                                {item.fieldType == 'checkbox' ? <> <Checkbox /> <h2 className='text-sm font-semibold'>{item.label}</h2> </>
+                                :item.fieldType == 'text' ? <><label className='text-sm font-semibold text-muted-foreground'>{item?.label}</label><InputField item={item}/></>
+                                : null}
                             </div>
+                        
                         ))}
+
+                        <div>
+                            
+                        </div>
                     </div>
                 </div>
 

@@ -124,6 +124,11 @@
         "label": "Vanity Mirror",
         "name": "vanityMirror",
         "fieldType": "checkbox"
+      },
+      {
+        "label": "Add new feature",
+        "name": "newFeature",
+        "fieldType": "text"
       }
     ]
   }

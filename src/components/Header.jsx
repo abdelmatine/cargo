@@ -11,11 +11,17 @@ function Header() {
 
   return (
     <div className='flex justify-between items-center shadow-sm p-5'>
+      <div className='flex justify-between items-center'>
       <img
-      src='/veg.svg'
-      width={200}
-      height={100}
-      />
+      src='/veh.png'
+      width={100}
+      height={80}
+      />&nbsp;
+      <h1 className="font-aclonica text-2xl font-bold hidden md:block">
+          VEHICOOL
+      </h1>
+      </div>
+
       <ul className='gap-16 hidden md:flex'>
         <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Home</li>
         <li className='font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary'>Search</li>
