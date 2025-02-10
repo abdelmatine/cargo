@@ -13,10 +13,18 @@ import TextAreaField from './components/TextAreaField'
 function AddListing() {
 
     const [formData, setFormData] = useState([]);
-    // const handleInputChange = (name, value) => (
-
-    // )
+     const handleInputChange = (name, value) => {
+        setFormData((prevData)=>({
+            ...prevData,
+            [name]:value
+        }))
+        console.log(formData);
+    }
     
+    const onSubmit=(e) => {
+        e.preventDefault();
+        console.log(formData);
+    }
   return (
     <div>
         <Header/>
@@ -31,9 +39,12 @@ function AddListing() {
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>{carDetails.carDetails.map((item, index)=>(
                         <div key={index}>
                             <label className='text-sm font-semibold text-muted-foreground'>{item?.label} {item.required&&<span className='text-red-500 font-bold'>*</span>}</label>
-                            {item.fieldType=='text' || item.fieldType=='number' ? <InputField item={item}/> 
-                            : item.fieldType=='dropdown'?<DropDownField item={item}/>
-                            : item.fieldType=='textarea'?<TextAreaField item={item}/>
+                            {item.fieldType=='text' || item.fieldType=='number' 
+                            ? <InputField item={item} handleInputChange={handleInputChange} /> 
+                            : item.fieldType=='dropdown'
+                            ?<DropDownField item={item} handleInputChange={handleInputChange}/>
+                            : item.fieldType=='textarea'
+                            ?<TextAreaField item={item} handleInputChange={handleInputChange}/>
                             : null}
                         </div>
 
@@ -48,7 +59,7 @@ function AddListing() {
                         {features.features.map((item, index)=>(
 
                             <div key={index} className='flex gap-2 items-center'>
-                                {item.fieldType == 'checkbox' ? <> <Checkbox /> <h2 className='text-sm font-semibold'>{item.label}</h2> </>
+                                {item.fieldType == 'checkbox' ? <> <Checkbox onCheckedChange={(value)=>handleInputChange(item.name,value)}/> <h2 className='text-sm font-semibold'>{item.label}</h2> </>
                                 :item.fieldType == 'text' ? <><label className='text-sm font-semibold text-muted-foreground'>{item?.label}</label><InputField item={item}/></>
                                 : null}
                             </div>
@@ -64,7 +75,7 @@ function AddListing() {
 
                 {/* Car Images */}
                 <div className='mt-10 flex justify-end'>
-                    <Button>Submit</Button>
+                    <Button type="submit" onClick={(e) => onSubmit(e)}>Submit</Button>
                 </div>
             </form>
         </div>
